@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Nov 25 12:08:45 CST 2018
+http\://maven.aliyun.com/nexus/content/groups/public/.error=Could not transfer artifact org.jboss\:jandex\:pom\:1.1.0.Final from/to nexus-aliyun (http\://maven.aliyun.com/nexus/content/groups/public)\: /Users/leebo/Desktop/JAVAEE_GROUP/JAVAEE_GROUP_Repository/Travller_Site/D\:\\Program\\.m2\\repository/org/jboss/jandex/1.1.0.Final/aether-4a40a6d3-7313-4c58-a40b-36ac57b96685-jandex-1.1.0.Final.pom-in-progress (No such file or directory)
+@default-nexus-aliyun-http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1543118925595
