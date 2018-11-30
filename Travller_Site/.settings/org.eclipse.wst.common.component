@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Travller_Site-0.0.1-SNAPSHOT">
+    <wb-module deploy-name="SpringMVCTest">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <property name="context-root" value="Travller_Site"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <property name="java-output-path" value="/Travller_Site/target/classes"/>
+        <property name="context-root" value="SpringMVCTest"/>
     </wb-module>
 </project-modules>
