@@ -12,7 +12,7 @@
         <!-- 指定连接数据库的用户名 -->
         <property name="connection.username">root</property>
         <!-- 指定连接数据库的密码 -->
-        <property name="connection.password">Tonystark!</property>
+        <property name="connection.password">123456</property>
         <!-- 指定数据库方言 -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hbm2ddl.auto">update</property>  
@@ -22,5 +22,7 @@
         <mapping class="com.group11.Entity.Scenic"/>
         <mapping class="com.group11.Entity.ScenicHistory"/>
         <mapping class="com.group11.Entity.City"/>
+        <mapping class="com.group11.Entity.Transportation"/>
+         <mapping class="com.group11.Entity.Transportationhistory"/>
     </session-factory>
 </hibernate-configuration>
