@@ -6,6 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.group11.Entity.City;
 import com.group11.Entity.Scenic;
 
 public class ScenicDAOimpl implements ScenicDAO{
@@ -27,8 +28,7 @@ public class ScenicDAOimpl implements ScenicDAO{
 	public Scenic selectOneScenic(Scenic scenic) {
 		Query query = session.createQuery("FROM Scenic as s WHERE s.id=:id");
 	    query.setInteger("id",scenic.getId());
-	    List<Scenic> scenics = query.list();
-	    Scenic _scenic = scenics.get(0);
+	    Scenic _scenic = (Scenic)query.uniqueResult();
 		return _scenic;
 	}
 
@@ -45,8 +45,7 @@ public class ScenicDAOimpl implements ScenicDAO{
 	public String getScenicName(Scenic scenic) {
 		Query query = session.createQuery("FROM Scenic as s WHERE s.id=:id");
 	    query.setInteger("id",scenic.getId());
-	    List<Scenic> scenics = query.list();
-	    Scenic _scenic = scenics.get(0);
+	    Scenic _scenic = (Scenic)query.uniqueResult();
 		return _scenic.getScenic_name();
 	}
 
@@ -54,9 +53,25 @@ public class ScenicDAOimpl implements ScenicDAO{
 	public String getScenicePrice(Scenic scenic) {
 	  Query query = session.createQuery("FROM Scenic as s WHERE s.id=:id");
       query.setInteger("id",scenic.getId());
-      List<Scenic> scenics = query.list();
-      Scenic _scenic = scenics.get(0);
+      Scenic _scenic = (Scenic)query.uniqueResult();
 	  return _scenic.getScenic_price();
+	}
+	@Override
+	public List<Scenic> selectOneCityScenic(City city,int max){
+		Query query = session.createQuery("FROM Scenic as s WHERE s.city_id.id=:id");
+		query.setFirstResult(0);
+		query.setMaxResults(max);
+		query.setInteger("id", city.getId());
+		List<Scenic> scenics = query.list();
+		return scenics;
+	}
+	
+	public List<Scenic> selectTopScenic(int max){
+		Query query = session.createQuery("FROM Scenic");
+		query.setFirstResult(0);
+		query.setMaxResults(max);
+		List<Scenic> scenics = query.list();
+		return scenics;
 	}
 
 }

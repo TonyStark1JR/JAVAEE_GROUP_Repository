@@ -19,6 +19,11 @@ public class Scenic {
     private String scenic_price;
     private String scenic_description;
     private String image_addr;
+    @ManyToOne
+    @JoinColumn(name="city_id")
+    private City city_id;
+    
+    
     public String getCity_name() {
 		return city_name;
 	}
@@ -32,9 +37,6 @@ public class Scenic {
 		this.city_id = city_id;
 	}
 	private String city_name;
-    @ManyToOne
-    @JoinColumn(name="city_id")
-    private City city_id;
     
 	public int getId() {
 		return id;

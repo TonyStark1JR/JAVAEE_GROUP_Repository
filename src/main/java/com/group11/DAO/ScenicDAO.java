@@ -2,6 +2,7 @@ package com.group11.DAO;
 
 import java.util.List;
 
+import com.group11.Entity.City;
 import com.group11.Entity.Scenic;
 
 public interface ScenicDAO {
@@ -11,4 +12,6 @@ public interface ScenicDAO {
        public String getScenicDescription(Scenic scenic);
        public String getScenicName(Scenic scenic);
        public String getScenicePrice(Scenic scenic);
+       public List<Scenic> selectOneCityScenic(City city,int max);
+       public List<Scenic> selectTopScenic(int max);
 }

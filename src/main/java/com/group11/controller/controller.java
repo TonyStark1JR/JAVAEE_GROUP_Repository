@@ -44,9 +44,12 @@ public class controller {
 	public String ScenicDetail(Model model,@PathVariable("scenic_id")int id) {
 		Scenic scenic = new Scenic();
 		Scenic _scenic = new Scenic();
+		List<Scenic> scenics = ScenicDAOimpl.selectTopScenic(3);
 		scenic.setId(id);
 		_scenic = ScenicDAOimpl.selectOneScenic(scenic);
+		scenics.add(_scenic);
 		model.addAttribute("scenic",_scenic);
+		model.addAttribute("topscenics",scenics);
 		return "detail";
 	}
 	
@@ -59,7 +62,6 @@ public class controller {
 		
 		ScenicHistory scenicHistory = new ScenicHistory();
 		Scenic scenic = ScenicDAOimpl.selectOneScenic(_scenic);
-		
 		scenicHistory.setScenic_id(scenic_id);
 		scenicHistory.setUser_id((String)httpSession.getAttribute("user_id"));
 		scenicHistory.setTime(timestamp);

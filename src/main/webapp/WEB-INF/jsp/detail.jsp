@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <%String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -122,27 +123,7 @@
             </div>
           </div>
         </div>
-        <div class="row mt-lg-5 mt-mb-4 mt-3">
-          <div class="col-lg-6 col-md-6">
-            <div class="blog-agile-text-middle">
-              <h4><a href="#">Tour from Paris</a></h4>
-              <p class="pt-3">consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet tempor incididunt Lorem ipsum sit amet tempor incididunt Lorem ipsum</p>
-              <div class="news-date mt-3">
-                <ul>
-                  <li><span class="far fa-calendar-check"></span><a href="#">12/4/2019</a></li>
-                  <li><span class="fas fa-tags "></span><a href="#">5 Tags</a></li>
-                  <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                </ul>
-              </div>
-              <div class="outs_more-buttn">
-                <a href="about.html">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 blog-agile-img">
-            <img src="../images/aa3.jpg" alt="12" class="img-fluid">
-          </div>
-        </div>
+   
       </div>
     </section>
     <!--// blog -->
@@ -150,66 +131,23 @@
     <section>
       <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
         <div class="row">
+        <c:forEach var="Scenic" items="${topscenics}">
           <div class="col-lg-3 col-md-6 col-sm-6 blog-grid-flex">
             <div class="blog-color">
-              <img src="../images/a1.jpg" class="img-thumbnail" alt="">
+              <img src="../${Scenic.image_addr}" class="img-thumbnail" alt="">
               <div class="blog-txt-info">
-                <h4 class="mt-2"><a href="about.html">Paris</a></h4>
+                <h4 class="mt-2"><a href="about.html">${Scenic.scenic_name}</a></h4>
                 <div class="news-date my-3">
                   <ul>
-                    <li><span class="far fa-calendar-check"></span><a href="#">12/4/2019</a></li>
-                    <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
+                    <li><span class="far fa-calendar-check"></span><a href="#">${Scenic.city_id.city_name }</a></li>
+                    <li><span class="far fa-comments"></span><a href="#">Price:${Scenic.scenic_price}</a></li>
                   </ul>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <p>${Scenic.scenic_description}</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 blog-grid-flex">
-            <div class="blog-color">
-              <img src="../images/a4.jpg" class="img-thumbnail" alt="">
-              <div class="blog-txt-info">
-                <h4 class="mt-2"><a href="about.html">Liberty</a></h4>
-                <div class="news-date my-3">
-                  <ul>
-                    <li><span class="far fa-calendar-check"></span><a href="#">12/4/2019</a></li>
-                    <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                  </ul>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 blog-grid-flex">
-            <div class="blog-color">
-              <img src="../images/a2.jpg" class="img-thumbnail" alt="">
-              <div class="blog-txt-info">
-                <h4 class="mt-2"><a href="about.html">Egypt</a></h4>
-                <div class="news-date my-3">
-                  <ul>
-                    <li><span class="far fa-calendar-check"></span><a href="#">12/4/2019</a></li>
-                    <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                  </ul>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 blog-grid-flex">
-            <div class="blog-color">
-              <img src="../images/a3.jpg" class="img-thumbnail" alt="">
-              <div class="blog-txt-info">
-                <h4 class="mt-2"><a href="about.html">Europe </a></h4>
-                <div class="news-date my-3">
-                  <ul>
-                    <li><span class="far fa-calendar-check"></span><a href="#">12/4/2019</a></li>
-                    <li><span class="far fa-comments"></span><a href="#">5 Comments</a></li>
-                  </ul>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-              </div>
-            </div>
-          </div>
+          </c:forEach>
         </div>
       </div>
     </section>

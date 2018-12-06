@@ -116,7 +116,7 @@
             
           </div>
           <div class="outs_more-buttn">
-            <a href="about.html">Read More</a>
+            <a href="about.html">查看订单详情</a>
           </div>
         </div>
         <div class="row mt-lg-5 mt-md-4 mt-3">
