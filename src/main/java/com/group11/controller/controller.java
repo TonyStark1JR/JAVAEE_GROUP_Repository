@@ -62,13 +62,30 @@ public class controller {
 		
 		ScenicHistory scenicHistory = new ScenicHistory();
 		Scenic scenic = ScenicDAOimpl.selectOneScenic(_scenic);
+		
+		System.out.println(scenic.getCity_name() + " " + scenic.getScenic_price() + " " + scenic.getScenic_description());
+		
 		scenicHistory.setScenic_id(scenic_id);
 		scenicHistory.setUser_id((String)httpSession.getAttribute("user_id"));
 		scenicHistory.setTime(timestamp);
+		scenicHistory.setImage_addr(scenic.getImage_addr());
+		scenicHistory.setScenic_description(scenic.getScenic_description());
+		scenicHistory.setScenic_name(scenic.getScenic_name());
+		scenicHistory.setScenic_price(scenic.getScenic_price());
+		
 		scenicHistoryimpl.addScenicHistory(scenicHistory);
 		
 		model.addAttribute("scenic",scenic);
 		return "ordersuccess";
+	}
+	
+	@RequestMapping("/userPage")
+	public String showUserPage(Model model,HttpSession httpSession) {
+		User user = new User();
+		user.setUser_id((String)httpSession.getAttribute("user_id"));
+        List<ScenicHistory> scenicHistories = scenicHistoryimpl.getOneUserScenicHistory(user);
+		model.addAttribute("sh", scenicHistories);
+		return "userPage";
 	}
 	
 	
@@ -92,4 +109,5 @@ public class controller {
 		
 		return "index3";
 	}
+	
 }
