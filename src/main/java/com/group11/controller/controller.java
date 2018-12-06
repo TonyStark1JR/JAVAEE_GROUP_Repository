@@ -70,4 +70,26 @@ public class controller {
 		model.addAttribute("scenic",scenic);
 		return "ordersuccess";
 	}
+	
+	
+	@RequestMapping("/flight")
+	public String showflight(Model model) {
+		
+		return "flight";
+	}
+	@RequestMapping("/ship")
+	public String showShip(Model model) {
+		
+		return "ship";
+	}
+	@RequestMapping("/index2")
+	public String showIndex2(Model model) {
+		
+		return "index2";
+	}
+	@RequestMapping("/index3")
+	public String showIndex3(Model model) {
+		
+		return "index3";
+	}
 }
