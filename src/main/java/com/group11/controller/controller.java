@@ -1,8 +1,5 @@
 package com.group11.controller;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,23 +12,16 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
-import com.group11.DAO.CityDAOimpl;
 import com.group11.DAO.ScenicDAO;
 import com.group11.DAO.ScenicDAOimpl;
 import com.group11.DAO.ScenicHistoryDAOimpl;
-import com.group11.DAO.TransportationDAOimpl;
-import com.group11.DAO.TransportationHistoryDAOimpl;
 import com.group11.Entity.City;
 import com.group11.Entity.Scenic;
 import com.group11.Entity.ScenicHistory;
-import com.group11.Entity.Transportation;
 import com.group11.Entity.User;
 
 @Controller
@@ -41,12 +31,6 @@ public class controller {
 	Session session = sessionFactory.openSession();
 	ScenicDAOimpl ScenicDAOimpl = new ScenicDAOimpl(session);
 	ScenicHistoryDAOimpl scenicHistoryimpl = new ScenicHistoryDAOimpl(session);
-	
-	TransportationDAOimpl transportationDAOimpl = new TransportationDAOimpl(session);
-	TransportationHistoryDAOimpl transportationHistoryDAOimpl = new TransportationHistoryDAOimpl(session);
-	
-	CityDAOimpl cityDAOimpl = new CityDAOimpl(session);
-	
 	@RequestMapping("/list")
 	public String showlist(Model model,HttpSession httpSession) {
 		List<Scenic> scenics = new ArrayList<>();
@@ -60,9 +44,12 @@ public class controller {
 	public String ScenicDetail(Model model,@PathVariable("scenic_id")int id) {
 		Scenic scenic = new Scenic();
 		Scenic _scenic = new Scenic();
+		List<Scenic> scenics = ScenicDAOimpl.selectTopScenic(3);
 		scenic.setId(id);
 		_scenic = ScenicDAOimpl.selectOneScenic(scenic);
+		scenics.add(_scenic);
 		model.addAttribute("scenic",_scenic);
+		model.addAttribute("topscenics",scenics);
 		return "detail";
 	}
 	
@@ -76,48 +63,35 @@ public class controller {
 		ScenicHistory scenicHistory = new ScenicHistory();
 		Scenic scenic = ScenicDAOimpl.selectOneScenic(_scenic);
 		
+		System.out.println(scenic.getCity_name() + " " + scenic.getScenic_price() + " " + scenic.getScenic_description());
+		
 		scenicHistory.setScenic_id(scenic_id);
 		scenicHistory.setUser_id((String)httpSession.getAttribute("user_id"));
 		scenicHistory.setTime(timestamp);
+		scenicHistory.setImage_addr(scenic.getImage_addr());
+		scenicHistory.setScenic_description(scenic.getScenic_description());
+		scenicHistory.setScenic_name(scenic.getScenic_name());
+		scenicHistory.setScenic_price(scenic.getScenic_price());
+		
 		scenicHistoryimpl.addScenicHistory(scenicHistory);
 		
 		model.addAttribute("scenic",scenic);
 		return "ordersuccess";
 	}
 	
-	
-	@RequestMapping(value = "index2", method = RequestMethod.GET)
-	public ModelAndView showIndex2(@ModelAttribute Transportation transportation) {
-		
-    		List<City> citylist =cityDAOimpl.findall();
-    	
-			ModelAndView model = null;	
-				model = new ModelAndView("index2");
-				model.addObject("citylist",citylist);		
-			return model;
-		
+	@RequestMapping("/userPage")
+	public String showUserPage(Model model,HttpSession httpSession) {
+		User user = new User();
+		user.setUser_id((String)httpSession.getAttribute("user_id"));
+        List<ScenicHistory> scenicHistories = scenicHistoryimpl.getOneUserScenicHistory(user);
+		model.addAttribute("sh", scenicHistories);
+		return "userPage";
 	}
 	
-	@RequestMapping(value = "flightandship", method = RequestMethod.POST)
-	public String findtransportation(@ModelAttribute Transportation transportation,Model model) throws ParseException {	
-		
-		SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
-		String nowdayTime = ft.format(transportation.getDate());
-		System.out.println(nowdayTime);
-		transportation.setDate(ft.parse(nowdayTime));
-	    System.out.println(transportation.getDate());
-	
-		List<Transportation> transportations = transportationDAOimpl.findall(transportation);
-		if(transportations == null) {
-			System.out.println("请重新查询，暂无此车票");
-		}else {
-			model.addAttribute("trans",transportations);
-		}		
-		return "translist";
-	}
 	
 	@RequestMapping("/flight")
 	public String showflight(Model model) {
+		
 		return "flight";
 	}
 	@RequestMapping("/ship")
@@ -125,9 +99,15 @@ public class controller {
 		
 		return "ship";
 	}
+	@RequestMapping("/index2")
+	public String showIndex2(Model model) {
+		
+		return "index2";
+	}
 	@RequestMapping("/index3")
 	public String showIndex3(Model model) {
 		
 		return "index3";
 	}
+	
 }
