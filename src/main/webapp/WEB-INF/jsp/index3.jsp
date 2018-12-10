@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-<title>jqGrid表格内容查询读取代码 - 邓林海</title>
+<title>邓林海</title>
 
 <link href="jqgrid/css/ui.jqgrid-bootstrap.min.css" rel="stylesheet" />
 <link href="jqgrid/css/bootstrap.min.css" rel="stylesheet"/>
@@ -69,9 +71,9 @@
 					sortname : 'id',
 					sortorder : "desc"
 				});
-      
+		 
     var rows = [  
-    	 {"departure":"四川","destination":"北京","date":"1","id":"1"},  
+    	 {"departure": "${trans.departure_id.city_name}" ,"destination":"北京","date":"1","id":"1"},  
  		{"departure":"四川","destination":"北京","date":"1","id":"2"},
  		{"departure":"四川","destination":"北京","date":"1","id":"3"},  
  		{"departure":"四川","destination":"北京","date":"1","id":"4"},  

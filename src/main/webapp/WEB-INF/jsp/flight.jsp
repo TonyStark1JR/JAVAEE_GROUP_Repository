@@ -61,9 +61,8 @@
                     </div>
                     <div class="cell-sm-6 offset-top-38">
                       <div class="form-group">
-                        <label for="from" class="form-label">From</label>
-                        <input id="from" type="text"  placeholder="Where are you departing from?" class="form-control">
-                            <div data-toggle="distpicker" >
+                        <label for="departure" class="form-label">出发地点</label> 
+                            <div data-toggle="distpicker" id="departure">
                               <select class="form-control" data-province="---- 选择省 ----"></select>
                               <select class="form-control" data-city="---- 选择市 ----"></select>
                             </div>
@@ -72,27 +71,22 @@
                     </div>
                     <div class="cell-sm-6 offset-top-38">
                       <div class="form-group">
-                        <label for="to" class="form-label">To</label>
-                        <input id="to" type="text"  placeholder="Where would you like to go?" class="form-control">
-                          <div data-toggle="distpicker" >
+                        <label for="destination" class="form-label">到达地点</label>
+                          <div data-toggle="distpicker" id="destination">
                             <select class="form-control" data-province="---- 选择省 ----"></select>
                             <select class="form-control" data-city="---- 选择市 ----"></select>
                            
                           </div>
                       </div>
                     </div>
-                    <div class="cell-sm-4 offset-top-45">
+                    <div class="cell-sm-6 offset-top-45">
                       <div class="form-group date">
-                        <label for="datetimepicker1" class="form-label">Check in</label>
-                        <input id="datetimepicker1" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
+                        <label for="datetimepicker1" class="form-label" name="date" id="date">出发日期</label>
+                        <input id="datetimepicker1" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" class="form-control">
+                        <span class="material-icons-event icon icon-md icon-primary"></span>
                       </div>
                     </div>
-                    <div class="cell-sm-4 offset-top-45">
-                      <div class="form-group date">
-                        <label for="datetimepicker2" class="form-label">Check out</label>
-                        <input id="datetimepicker2" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
-                      </div>
-                    </div>
+                
                    
                     <div class="cell-sm-8 offset-top-45">
              

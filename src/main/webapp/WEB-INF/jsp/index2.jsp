@@ -1,5 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation">
   <head>
@@ -69,40 +71,46 @@
             <div class="range">
               <div class="cell-lg-8 cell-lg-preffix-2">
                 <!-- RD Mailform-->
-                <form   method="post" action="index3" name="form1">
+                <form   method="post" action="flightandship" name="form1"  id="form1" >
                   <div class="range offset-top-22">
                     <div class="cell-sm-6">
                       <div class="form-group">
-                        <label for="from" class="form-label">From</label>
-                        <input id="from" type="text" name="city"  placeholder="Where are you departing from?" class="form-control">
-                         <div data-toggle="distpicker" >
-					        <select  class="form-control" data-province="---- 选择省 ----"></select>
-					        <select  class="form-control" data-city="---- 选择市 ----"></select>
-					      </div>
+                        <label for="departure_id.id" class="form-label">出发地点</label>
+           		 
+           		 <select name="departure_id.id" id="departure_id.id">
+								   <c:forEach  var="c" items="${citylist}">     
+								  <option value ="${c.id}">${c.city_name}</option>
+								  </c:forEach>
+				</select>
+				
+                    <!--     <div data-toggle="distpicker" id="departure">
+					        <select name="departure" id="departure" class="form-control" data-province="---- 选择省 ----"></select>
+					        <select  name="departure" id="departure" class="form-control" data-city="---- 选择市 ----"></select>
+					      </div> -->
                       </div>
                     </div>
                     <div class="cell-sm-6 offset-top-45 offset-sm-top-0">
                       <div class="form-group">
-                        <label for="to" class="form-label">To</label>
-                        <input id="to" type="text" name="city2"  placeholder="Where would you like to go?" class="form-control">
-                          <div data-toggle="distpicker" >
-					        <select  class="form-control" data-province="---- 选择省 ----"></select>
-					        <select  class="form-control" data-city="---- 选择市 ----"></select>
-					      </div>
+                        <label for="destination_id.id" class="form-label">到达地点</label>
+                  <select name="destination_id.id" id="destination_id.id">
+								   <c:forEach  var="c" items="${citylist}">     
+								  <option value ="${c.id}">${c.city_name}</option>
+								  </c:forEach>
+				</select>
+                  <!--           <div data-toggle="distpicker" id="destination">
+					        <select name="destination" id="destination" class="form-control" data-province="---- 选择省 ----"></select>
+					        <select name="destination" id="destination" class="form-control" data-city="---- 选择市 ----"></select>
+					      </div> -->
                       </div>
                     </div>
                     <div class="cell-sm-6 offset-top-45">
                       <div class="form-group date">
-                        <label for="datetimepicker1" class="form-label">Check in</label>
-                        <input id="datetimepicker1" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" data-constraints="@Required" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
+                        <label for="date" class="form-label" name="date" id="date">出发日期</label>
+                        <input name="date" id="date" type="text" data-time-picker="date" placeholder="mm/dd/yyyy"  class="form-control">
+                        <span class="material-icons-event icon icon-md icon-primary"></span>
                       </div>
                     </div>
-                    <div class="cell-sm-6 offset-top-45">
-                      <div class="form-group date">
-                        <label for="datetimepicker2" class="form-label">Check out</label>
-                        <input id="datetimepicker2" type="text" data-time-picker="date" placeholder="mm/dd/yyyy" data-constraints="@Required" class="form-control"><span class="material-icons-event icon icon-md icon-primary"></span>
-                      </div>
-                    </div>
+                
                     <div class="cell-xs-12 offset-top-37">
                       <input  type="submit" data-text="search" class="btn btn-orange btn-fullwidth btn-winona btn-sm" value="search"/>
                 </form>
@@ -334,51 +342,7 @@
             </div>
           </div>
         </section>
-        <!--Section Testimonials-->
-        <section class="section-71 section-bottom-80 bg-primary">
-          <div class="shell">
-            <h2 class="text-center">What Our Customers Say?</h2>
-            <div class="range">
-              <div class="cell-md-6">
-                <div class="unit unit-xs unit-xs-horizontal unit-spacing-xs">
-                  <div class="unit-left">
-                    <div class="round img-auto"><img src="images/index-18-84x84.jpg" alt="" width="84" height="84" class="round-green"></div>
-                  </div>
-                  <div class="unit-body">
-                    <blockquote class="quote">
-                      <p>
-                        <q>"I will use Mango Travel again! I've told all my friends how great these guys are and how great is the service they provide."</q>
-                      </p>
-                      <p>
-                        <cite>- Monica</cite>
-                        <time datetime="2016">20.09.2015</time>
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <div class="cell-md-6 offset-top-50 offset-md-top-0">
-                <div class="unit unit-xs unit-xs-horizontal unit-spacing-xs">
-                  <div class="unit-left">
-                    <div class="round img-auto"><img src="images/index-19-84x84.jpg" alt="" width="84" height="84" class="round-green"></div>
-                  </div>
-                  <div class="unit-body">
-                    <blockquote class="quote">
-                      <p>
-                        <q>"We had an unforgettable Travel experience with Mango travel. Great personalized service! Do not hesitate to use Mango travel. Highly recommend."</q>
-                      </p>
-                      <p>
-                        <cite>- Chandler</cite>
-                        <time datetime="2016">28.09.2018</time>
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <div class="cell-xs-12 text-center offset-top-50"><a href="#" data-text="All Testimonials" class="btn btn-xs btn-winona btn-orange-3">All Testimonials</a></div>
-            </div>
-          </div>
-        </section>
+ 
       </main>
       <!-- Page Footer-->
       <footer class="page-foot bg-base text-center text-md-left">
