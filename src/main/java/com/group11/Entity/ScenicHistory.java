@@ -15,11 +15,40 @@ public class ScenicHistory {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int history_id;
-	
 	private String user_id;
 	private String scenic_id;
 	private Date time;
+	private String scenic_name;
+	private String scenic_price;
+	private String scenic_description;
+	private String image_addr;
 	
+	
+	
+	public String getScenic_name() {
+		return scenic_name;
+	}
+	public void setScenic_name(String scenic_name) {
+		this.scenic_name = scenic_name;
+	}
+	public String getScenic_price() {
+		return scenic_price;
+	}
+	public void setScenic_price(String scenic_price) {
+		this.scenic_price = scenic_price;
+	}
+	public String getScenic_description() {
+		return scenic_description;
+	}
+	public void setScenic_description(String scenic_description) {
+		this.scenic_description = scenic_description;
+	}
+	public String getImage_addr() {
+		return image_addr;
+	}
+	public void setImage_addr(String image_addr) {
+		this.image_addr = image_addr;
+	}
 	public String getUser_id() {
 		return user_id;
 	}

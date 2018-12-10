@@ -1,5 +1,8 @@
 package com.group11.Entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
@@ -7,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +23,11 @@ public class Scenic {
     private String scenic_price;
     private String scenic_description;
     private String image_addr;
+    @ManyToOne
+    @JoinColumn(name="city_id")
+    private City city_id;
+    
+    
     public String getCity_name() {
 		return city_name;
 	}
@@ -32,9 +41,6 @@ public class Scenic {
 		this.city_id = city_id;
 	}
 	private String city_name;
-    @ManyToOne
-    @JoinColumn(name="city_id")
-    private City city_id;
     
 	public int getId() {
 		return id;
