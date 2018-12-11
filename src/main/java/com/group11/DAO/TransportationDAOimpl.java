@@ -8,7 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-import com.group11.Entity.Scenic;
+
 import com.group11.Entity.Transportation;
 
 public class TransportationDAOimpl implements TransportationDAO{

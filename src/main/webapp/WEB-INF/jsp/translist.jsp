@@ -67,7 +67,7 @@
                 	<td>无</td>
                 	<td>无</td>
                 	<td>无</td>
-                	<td><a href="buy.do?id=${u.id }">返回查询购票</a></td>
+                	<td><a href="index2">返回查询购票</a></td>
               </tbody>
             </c:if>
              <tbody>    
@@ -77,7 +77,7 @@
                 	<td>${t.destination_id.city_name }</td>
                 	<td>${t.date }</td>
                 	<td>${t.vehicle }</td>
-                	<td><a href="buy.do?id=${u.id }">购票</a></td>
+                	<td><a href="buytran/${t.id }">购票</a></td>
                 </tr>           
                 </c:forEach>
                 </tbody>

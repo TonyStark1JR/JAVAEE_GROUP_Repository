@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
@@ -27,11 +28,13 @@ import com.group11.DAO.ScenicDAO;
 import com.group11.DAO.ScenicDAOimpl;
 import com.group11.DAO.ScenicHistoryDAOimpl;
 import com.group11.DAO.TransportationDAOimpl;
+import com.group11.DAO.TransportationHistoryDAO;
 import com.group11.DAO.TransportationHistoryDAOimpl;
 import com.group11.Entity.City;
 import com.group11.Entity.Scenic;
 import com.group11.Entity.ScenicHistory;
 import com.group11.Entity.Transportation;
+import com.group11.Entity.TransportationHistory;
 import com.group11.Entity.User;
 
 @Controller
@@ -126,9 +129,14 @@ public class TransportController {
 		
 		return "ship";
 	}
-	@RequestMapping("/index3")
-	public String showIndex3(Model model) {
+	@RequestMapping("/buytran/{tran_id}")
+	public String showIndex3(@PathVariable("tran_id") int tranid) {
+		 TransportationHistory  transportationhistory = new  TransportationHistory();
+		 
+		 transportationhistory.setTransportation_id(tranid);
+		 System.out.println(transportationhistory.getTransportation_id());
+		transportationHistoryDAOimpl.createTransportationHistory(transportationhistory);
 		
-		return "index3";
+		return "redirect:/transport/index2";
 	}
 }

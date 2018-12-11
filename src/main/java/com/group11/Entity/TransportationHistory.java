@@ -10,13 +10,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Transportationhistory")
-public class Transportationhistory {
+public class TransportationHistory {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int history_id;
 	
-	private String user_id;
-	private String transportation_id;
+	private int user_id;
+	private int transportation_id;
 	private Date time;
 	public int getHistory_id() {
 		return history_id;
@@ -24,16 +24,16 @@ public class Transportationhistory {
 	public void setHistory_id(int history_id) {
 		this.history_id = history_id;
 	}
-	public String getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public String getTransportation_id() {
+	public int getTransportation_id() {
 		return transportation_id;
 	}
-	public void setTransportation_id(String transportation_id) {
+	public void setTransportation_id(int transportation_id) {
 		this.transportation_id = transportation_id;
 	}
 	public Date getTime() {
