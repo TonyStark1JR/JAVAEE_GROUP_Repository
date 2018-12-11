@@ -139,4 +139,9 @@ public class TransportController {
 		
 		return "redirect:/transport/index2";
 	}
+	@RequestMapping("/a")
+	public String showShip1(Model model) {
+		
+		return "a";
+	}
 }
