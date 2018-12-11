@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation">
   <head>
@@ -10,9 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLato%7CRoboto">
-    <link rel="stylesheet" href="css/style1.css">
-      <link href="css/main.css" rel="stylesheet1">
+    <link rel="stylesheet" type="<%=basePath%>/text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLato%7CRoboto">
+    <link rel="stylesheet" href="<%=basePath%>/css/style1.css">
+      <link href="<%=basePath%>/css/main.css" rel="stylesheet1">
   </head>
   <body>
     <!-- Page-->
@@ -30,7 +31,7 @@
                   <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand"><a href="index2" class="brand-name">
-                      <div class="logo"><img src="images/logo.png" alt=""></div></a></div>
+                      <div class="logo"><img src="<%=basePath%>/images/logo.png" alt=""></div></a></div>
                 </div>
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
@@ -105,9 +106,9 @@
           <div class="shell">
             <h2>Today's Flight Deals</h2>
             <div class="range">
-              <div class="cell-sm-6"><img src="images/flight-2-570x321.jpg" alt="" width="570" height="321">
+              <div class="cell-sm-6"><img src="<%=basePath%>/images/flight-2-570x321.jpg" alt="" width="570" height="321">
                 <div class="media-variant-2 flight-block">
-                  <div class="media-left"><img src="images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
+                  <div class="media-left"><img src="<%=basePath%>/images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
                   <div class="media-body">
                     <div class="reveal-inline-block">
                       <h6 class="tt-u">las - rio</h6>
@@ -152,7 +153,7 @@
                   </div>
                 </div>
                 <div class="media-variant-2 flight-block">
-                  <div class="media-left"><img src="images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
+                  <div class="media-left"><img src="<%=basePath%>/images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
                   <div class="media-body">
                     <div class="reveal-inline-block">
                       <h6 class="tt-u">SFO - MNL</h6>
@@ -197,7 +198,7 @@
                   <div class="text-center offset-top-20"><a href="#" data-text="search now" class="btn btn-xxs btn-winona btn-orange"><span>search now</span></a></div>
                 </div>
                 <div class="media-variant-2 flight-block">
-                  <div class="media-left"><img src="images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
+                  <div class="media-left"><img src="<%=basePath%>/images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
                   <div class="media-body">
                     <div class="reveal-inline-block">
                       <h6 class="tt-u">ATL - MSY</h6>
@@ -242,7 +243,7 @@
                   <div class="text-center offset-top-20"><a href="#" data-text="search now" class="btn btn-xxs btn-winona btn-orange"><span>search now</span></a></div>
                 </div>
                 <div class="media-variant-2 flight-block">
-                  <div class="media-left"><img src="images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
+                  <div class="media-left"><img src="<%=basePath%>/images/flight-5-165x64.jpg" alt="" width="165" height="64"></div>
                   <div class="media-body">
                     <div class="reveal-inline-block">
                       <h6 class="tt-u">ATL - MSY</h6>
@@ -298,8 +299,8 @@
                 <p>See tons of photos from real people and pick the plane before buying the ticket. Make sure you get the best seat using a seat map that will show you the plane's layout.</p>
                 <!-- Owl Carousel-->
                 <div data-items="1" data-stage-padding="0" data-loop="true" data-margin="0" data-nav="true" class="owl-carousel owl-carousel-3 offset-top-25">
-                  <div class="owl-item"><img src="images/flight-3-570x321.jpg" alt="" width="570" height="321"></div>
-                  <div class="owl-item"><img src="images/flight-4-570x321.jpg" alt="" width="570" height="321"></div>
+                  <div class="owl-item"><img src="<%=basePath%>/images/flight-3-570x321.jpg" alt="" width="570" height="321"></div>
+                  <div class="owl-item"><img src="<%=basePath%>/images/flight-4-570x321.jpg" alt="" width="570" height="321"></div>
                 </div>
               </div>
             </div>
@@ -311,7 +312,7 @@
             <h2 class="text-center">Find a flight by region</h2>
             <div class="range">
               <div class="cell-sm-6 cell-md-4">
-                <div class="thumbnail-custom-3"><img src="images/flight-6-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-6-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">Africa</a></h4>
                     <p>Marrakech - return from $206</p>
@@ -321,7 +322,7 @@
                 </div>
               </div>
               <div class="cell-sm-6 cell-md-4">
-                <div class="thumbnail-custom-3"><img src="images/flight-7-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-7-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">Australia</a></h4>
                     <p>Perth  - return from $400</p>
@@ -331,7 +332,7 @@
                 </div>
               </div>
               <div class="cell-sm-6 cell-md-4 offset-top-30 offset-md-top-0">
-                <div class="thumbnail-custom-3"><img src="images/flight-8-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-8-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">Asia</a></h4>
                     <p>Bangkok - return from $287</p>
@@ -341,7 +342,7 @@
                 </div>
               </div>
               <div class="cell-sm-6 cell-md-4 offset-top-30">
-                <div class="thumbnail-custom-3"><img src="images/flight-9-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-9-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">Latin America</a></h4>
                     <p>Santa Marta - return from $390</p>
@@ -351,7 +352,7 @@
                 </div>
               </div>
               <div class="cell-sm-6 cell-md-4 offset-top-30">
-                <div class="thumbnail-custom-3"><img src="images/flight-10-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-10-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">North America</a></h4>
                     <p>New York - return from $283</p>
@@ -361,7 +362,7 @@
                 </div>
               </div>
               <div class="cell-sm-6 cell-md-4 offset-top-30">
-                <div class="thumbnail-custom-3"><img src="images/flight-11-370x370.jpg" alt="" width="370" height="370">
+                <div class="thumbnail-custom-3"><img src="<%=basePath%>/images/flight-11-370x370.jpg" alt="" width="370" height="370">
                   <div class="caption">
                     <h4><a href="#">Europe</a></h4>
                     <p>Paris - return from $120</p>
@@ -381,7 +382,7 @@
                 <h2>WANT TO RENT A CAR?</h2>
                 <h2 class="letter-spacing-038 offset-top-15">Best Price Guarantee!</h2><a href="cars.html" data-text="rent now" class="btn btn-winona btn-orange-3 btn-xs offset-xs-top-47 offset-top-15"><span>rent now</span></a>
               </div>
-              <div class="cell-sm-7"><img src="images/flight-12-664x350.png" alt="" width="664" height="350"></div>
+              <div class="cell-sm-7"><img src="<%=basePath%>/images/flight-12-664x350.png" alt="" width="664" height="350"></div>
             </div>
           </div>
         </section>
@@ -468,10 +469,10 @@
       </div>
     </div>
     <!-- Java script-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="<%=basePath%>/js/core.min.js"></script>
+    <script src="<%=basePath%>/js/script.js"></script>
 
-      <script src="js/distpicker.js"></script>
-  <script src="js/main1.js"></script>
+      <script src="<%=basePath%>/js/distpicker.js"></script>
+  <script src="<%=basePath%>/js/main1.js"></script>
   </body>
 </html>

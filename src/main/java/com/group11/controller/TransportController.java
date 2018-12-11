@@ -35,6 +35,7 @@ import com.group11.Entity.Transportation;
 import com.group11.Entity.User;
 
 @Controller
+@RequestMapping("/transport")
 public class TransportController {
 	Configuration configuration = new Configuration().configure();
 	SessionFactory sessionFactory = configuration.buildSessionFactory();
@@ -42,7 +43,7 @@ public class TransportController {
 	ScenicDAOimpl ScenicDAOimpl = new ScenicDAOimpl(session);
 	ScenicHistoryDAOimpl scenicHistoryimpl = new ScenicHistoryDAOimpl(session);
 	
-	TransportationDAOimpl transportationDAOimpl = new TransportationDAOimpl(session);
+	TransportationDAOimpl transportationuDAOimpl = new TransportationDAOimpl(session);
 	TransportationHistoryDAOimpl transportationHistoryDAOimpl = new TransportationHistoryDAOimpl(session);
 	
 	CityDAOimpl cityDAOimpl = new CityDAOimpl(session);
@@ -107,7 +108,7 @@ public class TransportController {
 		transportation.setDate(ft.parse(nowdayTime));
 	    System.out.println(transportation.getDate());
 	
-		List<Transportation> transportations = transportationDAOimpl.findall(transportation);
+		List<Transportation> transportations = transportationuDAOimpl.findall(transportation);
 		if(transportations == null) {
 			System.out.println("请重新查询，暂无此车票");
 		}else {

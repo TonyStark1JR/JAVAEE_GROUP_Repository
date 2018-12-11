@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+ <%String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
@@ -11,12 +12,12 @@
 		<title>购票列表</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="<%=basePath%>/css/bootstrap.min.css" rel="stylesheet">
 		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/main1.css" rel="stylesheet">
+		<link href="<%=basePath%>/css/main1.css" rel="stylesheet">
 	</head>
 	<body>
 <!-- Wrap all page content here -->
@@ -92,7 +93,7 @@
 </div>
 
 	<!-- script references -->
-		<script type='text/javascript' src="js/jquery-1.9.1.min.js"></script>
-        <script type='text/javascript' src="js/bootstrap1.min.js"></script>
+		<script type='text/javascript' src="<%=basePath%>/js/jquery-1.9.1.min.js"></script>
+        <script type='text/javascript' src="<%=basePath%>/js/bootstrap1.min.js"></script>
 	</body>
 </html>

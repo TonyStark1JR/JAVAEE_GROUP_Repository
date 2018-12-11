@@ -2,6 +2,8 @@
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+ <%String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en" class="wide wow-animation">
   <head>
@@ -12,9 +14,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLato%7CRoboto">
-    <link rel="stylesheet" href="css/style1.css">
-  <link href="css/main.css" rel="stylesheet1">
+    <link rel="stylesheet" type="<%=basePath%>/text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLato%7CRoboto">
+    <link rel="stylesheet" href="<%=basePath%>/css/style1.css">
+  <link href="<%=basePath%>/css/main.css" rel="stylesheet1">
   </head>
   <body>
     <!-- Page-->
@@ -32,7 +34,7 @@
                   <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand"><a href="index2" class="brand-name">
-                      <div class="logo"><img src="images/logo.png" alt=""></div></a></div>
+                      <div class="logo"><img src="<%=basePath%>/images/logo.png" alt=""></div></a></div>
                 </div>
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
@@ -55,12 +57,12 @@
 		 <!-- Swiper--> 
 		<div data-autoplay="5000" class="swiper-container swiper-slider text-center">
           <div class="swiper-wrapper">
-            <div data-slide-bg="images/index5.jpg" class="swiper-slide">             
+            <div data-slide-bg="<%=basePath%>/images/index5.jpg" class="swiper-slide">             
             </div>
-            <div data-slide-bg="images/index10.jpg" class="swiper-slide">
+            <div data-slide-bg="<%=basePath%>/images/index10.jpg" class="swiper-slide">
              
             </div>
-            <div data-slide-bg="images/index11.jpg" class="swiper-slide">             
+            <div data-slide-bg="<%=basePath%>/images/index11.jpg" class="swiper-slide">             
             </div>
           </div>
           <!-- Swiper Pagination-->
@@ -126,7 +128,7 @@
               <!-- Owl Carousel-->
               <div data-items="1" data-xs-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="15" data-loop="false" data-margin="30" data-nav="true" class="owl-carousel">
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-2-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-2-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Barcelona</h4>
@@ -136,7 +138,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-3-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-3-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>New York</h4>
@@ -146,7 +148,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-4-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-4-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Los Angeles</h4>
@@ -156,7 +158,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-2-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-2-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Barcelona</h4>
@@ -166,7 +168,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-3-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-3-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>New York</h4>
@@ -176,7 +178,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom"><img src="images/index-4-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom"><img src="<%=basePath%>/images/index-4-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Los Angeles</h4>
@@ -198,70 +200,70 @@
                 <h2>Most Popular Destinations</h2><a href="#" class="btn-link tt-u offset-top-21 reveal-inline-block">all Destinations</a>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-1">
-                <div class="thumbnail-custom-2"><img src="images/index-5-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-5-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>H</span><span>a</span><span>v</span><span>a</span><span>n</span><span>a</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-2">
-                <div class="thumbnail-custom-2"><img src="images/index-6-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-6-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>B</span><span>a</span><span>l</span><span>i</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-3">
-                <div class="thumbnail-custom-2"><img src="images/index-7-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-7-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>M</span><span>a</span><span>d</span><span>a</span><span>g</span><span>a</span><span>s</span><span>c</span><span>a</span><span>r</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-4">
-                <div class="thumbnail-custom-2"><img src="images/index-8-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-8-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>T</span><span>u</span><span>r</span><span>k</span><span>e</span><span>y</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-5">
-                <div class="thumbnail-custom-2"><img src="images/index-9-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-9-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>L</span><span>o</span><span>s</span><span>&#160;</span><span>A</span><span>n</span><span>g</span><span>e</span><span>l</span><span>e</span><span>s</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-7">
-                <div class="thumbnail-custom-2"><img src="images/index-10-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-10-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>C</span><span>a</span><span>n</span><span>c</span><span>u</span><span>n</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-8">
-                <div class="thumbnail-custom-2"><img src="images/index-11-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-11-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>S</span><span>e</span><span>y</span><span>c</span><span>h</span><span>e</span><span>l</span><span>l</span><span>e</span><span>s</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-9">
-                <div class="thumbnail-custom-2"><img src="images/index-12-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-12-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>E</span><span>g</span><span>y</span><span>p</span><span>t</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-10">
-                <div class="thumbnail-custom-2"><img src="images/index-13-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-13-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>M</span><span>o</span><span>r</span><span>o</span><span>c</span><span>c</span><span>o</span></a></div>
                   </div>
                 </div>
               </div>
               <div class="cell-xs-6 cell-sm-4 cell-md-3 cell-md-push-11">
-                <div class="thumbnail-custom-2"><img src="images/index-14-512x270.jpg" alt="" width="512" height="270">
+                <div class="thumbnail-custom-2"><img src="<%=basePath%>/images/index-14-512x270.jpg" alt="" width="512" height="270">
                   <div class="caption">
                     <div class="h4"><a href="#"><span>I</span><span>t</span><span>a</span><span>l</span><span>y</span></a></div>
                   </div>
@@ -278,7 +280,7 @@
               <!-- Owl Carousel-->
               <div data-items="1" data-xs-items="1" data-sm-items="2" data-md-items="3" data-stage-padding="15" data-loop="false" data-margin="30" data-nav="true" class="owl-carousel">
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-15-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-15-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Princess Cruises</h4>
@@ -288,7 +290,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-16-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-16-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Princess Consuella</h4>
@@ -298,7 +300,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-17-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-17-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Legend Cruises</h4>
@@ -308,7 +310,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-15-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-15-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Princess Cruises</h4>
@@ -318,7 +320,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-16-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-16-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Princess Consuella</h4>
@@ -328,7 +330,7 @@
                   </div>
                 </div>
                 <div class="owl-item">
-                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="images/index-17-370x370.jpg" alt="" width="370" height="370">
+                  <div class="thumbnail-custom thumbnail-custom-variant-1"><img src="<%=basePath%>/images/index-17-370x370.jpg" alt="" width="370" height="370">
                     <div class="caption">
                       <div class="h5">-35%</div>
                       <h4>Legend Cruises</h4>
@@ -426,10 +428,10 @@
       </div>
     </div>
     <!-- Java script-->
-   <script  type="text/javascript" src="js/core.min.js"></script>
-    <script  type="text/javascript" src="js/script.js" ></script>
+   <script  type="text/javascript" src="<%=basePath%>/js/core.min.js"></script>
+    <script  type="text/javascript" src="<%=basePath%>/js/script.js" ></script>
 
-  <script src="js/distpicker.js"></script>
-  <script src="js/main1.js"></script>
+  <script src="<%=basePath%>/js/distpicker.js"></script>
+  <script src="<%=basePath%>/js/main1.js"></script>
   </body>
 </html>
